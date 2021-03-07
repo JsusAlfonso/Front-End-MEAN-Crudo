@@ -10,6 +10,7 @@ import { ConfigurationValues } from '../helpers/configurationValues';
 })
 export class AppComponent{
   title = 'ejemploApis';
+  user = {};
   constructor(private apiConnection: ApiService) {}
 
   fnGetUser(){
@@ -19,6 +20,7 @@ export class AppComponent{
     this.apiConnection.getUser()
     .then((data:object) => {
         console.log(data);
+        this.user = data
     });
   }
   
